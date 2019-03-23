@@ -12,6 +12,9 @@
 		2FD536722245778B00D11640 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD536702245778B00D11640 /* Main.storyboard */; };
 		2FD536742245778D00D11640 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FD536732245778D00D11640 /* Assets.xcassets */; };
 		2FD536772245778D00D11640 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD536752245778D00D11640 /* LaunchScreen.storyboard */; };
+		2FD53687224649DD00D11640 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD53686224649DD00D11640 /* LocationView.swift */; };
+		2FD5368922464A2500D11640 /* LocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FD5368822464A2500D11640 /* LocationView.xib */; };
+		2FD5368B2246591600D11640 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD5368A2246591600D11640 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		2FD536732245778D00D11640 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FD536762245778D00D11640 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FD536782245778D00D11640 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FD53686224649DD00D11640 /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		2FD5368822464A2500D11640 /* LocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationView.xib; sourceTree = "<group>"; };
+		2FD5368A2246591600D11640 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F2B507E2246AADD0047DD54 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2FD5368A2246591600D11640 /* UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		2FD536602245778B00D11640 = {
 			isa = PBXGroup;
 			children = (
@@ -54,14 +68,25 @@
 		2FD5366B2245778B00D11640 /* sun */ = {
 			isa = PBXGroup;
 			children = (
+				2FD536782245778D00D11640 /* Info.plist */,
 				2FD5366C2245778B00D11640 /* AppDelegate.swift */,
-				2FD5366E2245778B00D11640 /* ViewController.swift */,
 				2FD536702245778B00D11640 /* Main.storyboard */,
+				2FD5366E2245778B00D11640 /* ViewController.swift */,
+				2FD53685224649DD00D11640 /* Views */,
+				2F2B507E2246AADD0047DD54 /* Extensions */,
 				2FD536732245778D00D11640 /* Assets.xcassets */,
 				2FD536752245778D00D11640 /* LaunchScreen.storyboard */,
-				2FD536782245778D00D11640 /* Info.plist */,
 			);
 			path = sun;
+			sourceTree = "<group>";
+		};
+		2FD53685224649DD00D11640 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2FD53686224649DD00D11640 /* LocationView.swift */,
+				2FD5368822464A2500D11640 /* LocationView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FD536772245778D00D11640 /* LaunchScreen.storyboard in Resources */,
+				2FD5368922464A2500D11640 /* LocationView.xib in Resources */,
 				2FD536742245778D00D11640 /* Assets.xcassets in Resources */,
 				2FD536722245778B00D11640 /* Main.storyboard in Resources */,
 			);
@@ -135,6 +161,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FD53687224649DD00D11640 /* LocationView.swift in Sources */,
+				2FD5368B2246591600D11640 /* UIColor.swift in Sources */,
 				2FD5366F2245778B00D11640 /* ViewController.swift in Sources */,
 				2FD5366D2245778B00D11640 /* AppDelegate.swift in Sources */,
 			);
@@ -213,7 +241,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -268,7 +296,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -285,6 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KPN5P5BCP;
 				INFOPLIST_FILE = sun/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,7 +321,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bohdanpodvirnyi.sun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -303,6 +332,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KPN5P5BCP;
 				INFOPLIST_FILE = sun/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +340,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bohdanpodvirnyi.sun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
