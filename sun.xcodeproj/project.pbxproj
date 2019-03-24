@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F035E802246C45E00931273 /* SunInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F035E7F2246C45E00931273 /* SunInfo.swift */; };
+		2F035E8B22479B4800931273 /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F035E8A22479B4800931273 /* NSNotificationName.swift */; };
+		2F2B50802246B1530047DD54 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B507F2246B1530047DD54 /* NetworkService.swift */; };
+		2F2B50822246B1980047DD54 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B50812246B1980047DD54 /* LocationService.swift */; };
 		2FD5366D2245778B00D11640 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD5366C2245778B00D11640 /* AppDelegate.swift */; };
 		2FD5366F2245778B00D11640 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD5366E2245778B00D11640 /* ViewController.swift */; };
 		2FD536722245778B00D11640 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD536702245778B00D11640 /* Main.storyboard */; };
@@ -15,9 +19,14 @@
 		2FD53687224649DD00D11640 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD53686224649DD00D11640 /* LocationView.swift */; };
 		2FD5368922464A2500D11640 /* LocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FD5368822464A2500D11640 /* LocationView.xib */; };
 		2FD5368B2246591600D11640 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD5368A2246591600D11640 /* UIColor.swift */; };
+		43D6D01A44389DC46007719D /* Pods_sun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662415DABAF88D6C1169A15E /* Pods_sun.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F035E7F2246C45E00931273 /* SunInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunInfo.swift; sourceTree = "<group>"; };
+		2F035E8A22479B4800931273 /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
+		2F2B507F2246B1530047DD54 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		2F2B50812246B1980047DD54 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		2FD536692245778B00D11640 /* sun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD5366C2245778B00D11640 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FD5366E2245778B00D11640 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +37,9 @@
 		2FD53686224649DD00D11640 /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		2FD5368822464A2500D11640 /* LocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationView.xib; sourceTree = "<group>"; };
 		2FD5368A2246591600D11640 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		662415DABAF88D6C1169A15E /* Pods_sun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EC12EF93243B03F33392A1F /* Pods-sun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sun/Pods-sun.debug.xcconfig"; sourceTree = "<group>"; };
+		A0AAEABCE7718B8762DDEE24 /* Pods-sun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sun.release.xcconfig"; path = "Pods/Target Support Files/Pods-sun/Pods-sun.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,18 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43D6D01A44389DC46007719D /* Pods_sun.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F035E7E2246C42500931273 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2F035E7F2246C45E00931273 /* SunInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		2F2B507E2246AADD0047DD54 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				2FD5368A2246591600D11640 /* UIColor.swift */,
+				2F035E8A22479B4800931273 /* NSNotificationName.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2F2B50832246BB5C0047DD54 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2F2B50812246B1980047DD54 /* LocationService.swift */,
+				2F2B507F2246B1530047DD54 /* NetworkService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		2FD536602245778B00D11640 = {
@@ -54,6 +85,8 @@
 			children = (
 				2FD5366B2245778B00D11640 /* sun */,
 				2FD5366A2245778B00D11640 /* Products */,
+				BD739B2FAA13C15F5A485D5A /* Pods */,
+				8AAB8F5A2EA1C32E45164A51 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,8 +103,10 @@
 			children = (
 				2FD536782245778D00D11640 /* Info.plist */,
 				2FD5366C2245778B00D11640 /* AppDelegate.swift */,
-				2FD536702245778B00D11640 /* Main.storyboard */,
 				2FD5366E2245778B00D11640 /* ViewController.swift */,
+				2FD536702245778B00D11640 /* Main.storyboard */,
+				2F035E7E2246C42500931273 /* Models */,
+				2F2B50832246BB5C0047DD54 /* Services */,
 				2FD53685224649DD00D11640 /* Views */,
 				2F2B507E2246AADD0047DD54 /* Extensions */,
 				2FD536732245778D00D11640 /* Assets.xcassets */,
@@ -89,6 +124,23 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		8AAB8F5A2EA1C32E45164A51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				662415DABAF88D6C1169A15E /* Pods_sun.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD739B2FAA13C15F5A485D5A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8EC12EF93243B03F33392A1F /* Pods-sun.debug.xcconfig */,
+				A0AAEABCE7718B8762DDEE24 /* Pods-sun.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,9 +148,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2FD5367B2245778D00D11640 /* Build configuration list for PBXNativeTarget "sun" */;
 			buildPhases = (
+				EE1A820DE073DCA2974CCF60 /* [CP] Check Pods Manifest.lock */,
 				2FD536652245778B00D11640 /* Sources */,
 				2FD536662245778B00D11640 /* Frameworks */,
 				2FD536672245778B00D11640 /* Resources */,
+				474D773597362A9D5887F63D /* [CP] Embed Pods Frameworks */,
+				1FDF736F52650D7CEA3AE063 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -156,6 +211,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1FDF736F52650D7CEA3AE063 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-sun/Pods-sun-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sun/Pods-sun-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		474D773597362A9D5887F63D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-sun/Pods-sun-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sun/Pods-sun-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE1A820DE073DCA2974CCF60 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sun-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2FD536652245778B00D11640 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -163,8 +289,12 @@
 			files = (
 				2FD53687224649DD00D11640 /* LocationView.swift in Sources */,
 				2FD5368B2246591600D11640 /* UIColor.swift in Sources */,
+				2F2B50822246B1980047DD54 /* LocationService.swift in Sources */,
+				2F2B50802246B1530047DD54 /* NetworkService.swift in Sources */,
+				2F035E8B22479B4800931273 /* NSNotificationName.swift in Sources */,
 				2FD5366F2245778B00D11640 /* ViewController.swift in Sources */,
 				2FD5366D2245778B00D11640 /* AppDelegate.swift in Sources */,
+				2F035E802246C45E00931273 /* SunInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +438,7 @@
 		};
 		2FD5367C2245778D00D11640 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EC12EF93243B03F33392A1F /* Pods-sun.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -327,6 +458,7 @@
 		};
 		2FD5367D2245778D00D11640 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0AAEABCE7718B8762DDEE24 /* Pods-sun.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

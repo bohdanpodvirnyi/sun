@@ -15,7 +15,7 @@ final class LocationView: UIView {
     
     static let minimumHeight: CGFloat = 120.0
     
-    var currentLocation: String?
+    var currentLocationName: String?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -86,7 +86,7 @@ extension LocationView {
     
     @objc private func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.text?.isEmpty ?? true {
-            textField.text = currentLocation
+            textField.text = currentLocationName
         }
     }
 }

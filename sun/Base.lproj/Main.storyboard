@@ -23,8 +23,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCY-ZF-A8r">
-                                <rect key="frame" x="213.5" y="285" width="72" height="42"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCY-ZF-A8r">
+                                <rect key="frame" x="213" y="285" width="73" height="42"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="35"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -33,8 +33,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrC-PM-JKR">
-                                <rect key="frame" x="213.5" y="342" width="72" height="42"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrC-PM-JKR">
+                                <rect key="frame" x="213" y="342" width="73" height="42"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="35"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -45,17 +45,27 @@
                                     <constraint firstAttribute="height" constant="120" id="Xoj-yT-dws"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ama-wO-Pst">
+                                <rect key="frame" x="239.5" y="296" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="jFN-WI-CqC">
+                                <rect key="frame" x="239.5" y="353" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="jFN-WI-CqC" firstAttribute="centerX" secondItem="wrC-PM-JKR" secondAttribute="centerX" id="2WY-ng-v0m"/>
                             <constraint firstItem="pLZ-qb-QCJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-57" id="7Ti-4y-mGH"/>
                             <constraint firstItem="rhK-vO-NFU" firstAttribute="centerX" secondItem="pLZ-qb-QCJ" secondAttribute="centerX" id="9ra-yU-730"/>
+                            <constraint firstItem="Ama-wO-Pst" firstAttribute="centerX" secondItem="wCY-ZF-A8r" secondAttribute="centerX" id="Ajn-VA-PDN"/>
                             <constraint firstItem="wCY-ZF-A8r" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="62" id="KZD-94-kcN"/>
                             <constraint firstItem="wCY-ZF-A8r" firstAttribute="bottom" secondItem="pLZ-qb-QCJ" secondAttribute="bottom" constant="2" id="O3w-KA-EPp"/>
                             <constraint firstItem="pLZ-qb-QCJ" firstAttribute="top" secondItem="4av-MO-jPQ" secondAttribute="bottom" constant="109" id="UH6-wb-4zv"/>
                             <constraint firstItem="wrC-PM-JKR" firstAttribute="bottom" secondItem="rhK-vO-NFU" secondAttribute="bottom" constant="2" id="Xl8-ZU-MEI"/>
                             <constraint firstItem="wrC-PM-JKR" firstAttribute="centerX" secondItem="wCY-ZF-A8r" secondAttribute="centerX" id="bxV-W2-h3o"/>
                             <constraint firstItem="4av-MO-jPQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dc3-ro-Vre"/>
+                            <constraint firstItem="jFN-WI-CqC" firstAttribute="centerY" secondItem="wrC-PM-JKR" secondAttribute="centerY" id="eE5-D7-sya"/>
+                            <constraint firstItem="Ama-wO-Pst" firstAttribute="centerY" secondItem="wCY-ZF-A8r" secondAttribute="centerY" id="heY-4U-tWY"/>
                             <constraint firstItem="4av-MO-jPQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rpY-1o-q4y"/>
                             <constraint firstItem="rhK-vO-NFU" firstAttribute="top" secondItem="pLZ-qb-QCJ" secondAttribute="bottom" constant="25" id="sZY-gV-n1Q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4av-MO-jPQ" secondAttribute="trailing" id="vlb-2w-QJN"/>
@@ -68,6 +78,8 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="locationView" destination="4av-MO-jPQ" id="kmb-cm-yeO"/>
+                        <outlet property="sunriseLabel" destination="wCY-ZF-A8r" id="R1s-U4-Qe6"/>
+                        <outlet property="sunsetLabel" destination="wrC-PM-JKR" id="2P6-iR-ea3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
