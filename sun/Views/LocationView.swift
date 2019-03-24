@@ -11,11 +11,17 @@ import UIKit
 final class LocationView: UIView {
     
     @IBOutlet private var locationView: UIView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var locationTextField: UITextField!
     
-    static let minimumHeight: CGFloat = 120.0
+    static let minimumHeight: CGFloat = 140.0
     
-    var currentLocationName: String?
+    var currentLocationName: String? {
+        didSet {
+            activityIndicator.stopAnimating()
+            locationTextField.text = currentLocationName
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,6 +47,8 @@ final class LocationView: UIView {
         
         locationTextField.addTarget(self, action: #selector(textFieldDidBeginEditing(_:)), for: .editingDidBegin)
         locationTextField.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), for: .editingDidEnd)
+        
+        activityIndicator.startAnimating()
     }
     
     private func changeHeight(to newHeight: CGFloat) {
@@ -60,6 +68,11 @@ final class LocationView: UIView {
             self.layoutIfNeeded()
             self.superview?.layoutIfNeeded()
         }
+    }
+    
+    @IBAction private func refreshAction(_ sender: Any) {
+        activityIndicator.startAnimating()
+        LocationService.shared().refreshLocation()
     }
     
     @IBAction private func editAction(_ sender: UIButton) {

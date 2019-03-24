@@ -17,8 +17,15 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(updateLocationName), name: NSNotification.Name.LocationNameIsUpdated, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateSunInfo), name: NSNotification.Name.SunInfoIsUpdated, object: nil)
-        locationView.currentLocationName = "Lviv"
+    }
+    
+    @objc private func updateLocationName() {
+        guard let locationName = LocationService.shared().currentLocationName else { return }
+        DispatchQueue.main.async {
+            self.locationView.currentLocationName = locationName
+        }
     }
     
     @objc private func updateSunInfo() {

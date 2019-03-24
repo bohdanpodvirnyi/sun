@@ -11,5 +11,6 @@ import Foundation
 extension NSNotification.Name {
     
     static let SunInfoIsUpdated: NSNotification.Name = NSNotification.Name(rawValue: "SunInfoIsUpdated")
+    static let LocationNameIsUpdated: NSNotification.Name = NSNotification.Name(rawValue: "LocationNameIsUpdated")
     
 }

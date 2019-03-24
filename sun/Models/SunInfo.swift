@@ -26,7 +26,11 @@ final class SunInfo {
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         
         let date = dateFormatter.date(from: dateString ?? "")
-        dateFormatter.timeZone = TimeZone.current
+        if let timeZone = LocationService.shared().currentTimeZone {
+            dateFormatter.timeZone = timeZone
+        } else {
+            dateFormatter.timeZone = TimeZone.current
+        }
         dateFormatter.dateFormat = "HH:mm"
         
         return dateFormatter.string(from: date ?? Date())
