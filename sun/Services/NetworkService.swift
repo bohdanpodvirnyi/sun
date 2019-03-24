@@ -42,7 +42,11 @@ final class NetworkService {
                 .withError({ error in completion(.failure(error)) })
                 .withValue({ (value) in
                     guard let result = value as? [String: AnyObject] else {
-                        completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: ""])))
+                        completion(.failure(NSError(
+                            domain: "",
+                            code: 0,
+                            userInfo: [NSLocalizedDescriptionKey: "Service cannot get correct sunrise/sunset time."]
+                        )))
                         return
                     }
                     if let status = result["status"] as? String {
@@ -52,7 +56,11 @@ final class NetworkService {
                             return
                         }
                     }
-                    completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: ""])))
+                    completion(.failure(NSError(
+                        domain: "",
+                        code: 0,
+                        userInfo: [NSLocalizedDescriptionKey: "Service cannot get correct sunrise/sunset time."]
+                    )))
                 })
         })
     }
@@ -106,14 +114,22 @@ final class NetworkService {
                 .withError({ error in completion(.failure(error)) })
                 .withValue({ (value) in
                     guard let result = value as? [String: AnyObject] else {
-                        completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: ""])))
+                        completion(.failure(NSError(
+                            domain: "",
+                            code: 0,
+                            userInfo: [NSLocalizedDescriptionKey: "Service cannot get correct time zone."]
+                        )))
                         return
                     }
                     if result["status"] as! String == "OK" {
                         let timeZone = TimeZone(identifier: result["timeZoneId"] as? String ?? "")
                         completion(.success(timeZone ?? TimeZone.current))
                     } else {
-                        completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: ""])))
+                        completion(.failure(NSError(
+                            domain: "",
+                            code: 0,
+                            userInfo: [NSLocalizedDescriptionKey: "Service cannot get correct time zone."]
+                        )))
                     }
                 })
         })

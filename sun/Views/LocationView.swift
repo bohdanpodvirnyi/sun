@@ -139,7 +139,7 @@ extension LocationView {
                 NetworkService.shared().findAutocompletePrediction(for: searchText) { [weak self] (result) in
                     guard let weakSelf = self else { return }
                     result
-//                        .withError(show error)
+                        .withError(AlertService.shared().showError(_:))
                         .withValue({ (list) in
                             weakSelf.autocompleteList = list.filter({ $0.types.contains("locality") })
                         })
@@ -168,7 +168,7 @@ extension LocationView: UITableViewDelegate, UITableViewDataSource {
         NetworkService.shared().getPlaceLocation(by: selectedPredictionItem.placeID) { [weak self] (result) in
             guard let weakSelf = self else { return }
             result
-//                .withError(show error)
+                .withError(AlertService.shared().showError(_:))
                 .withValue({ (location) in
                     LocationService.shared().currentLocationName = selectedPredictionItem.attributedFullText.string
                     LocationService.shared().preferredLocation = location

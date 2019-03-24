@@ -56,7 +56,7 @@ final class LocationService: NSObject {
         if let location = preferredLocation {
             NetworkService.shared().getTiming(for: location.coordinate) { (result) in
                 result
-//                      .withError()
+                    .withError(AlertService.shared().showError(_:))
                     .withValue({ (info) in
                         LocationService.shared().currentSunInfo = info
                     })
@@ -67,13 +67,13 @@ final class LocationService: NSObject {
                 case .authorizedAlways, .authorizedWhenInUse:
                     locationManager.requestLocation()
                 case .restricted, .denied:
-//                    show error
+                    AlertService.shared().showError(with: "Please, grant location access and try again!")
                     break
                 case .notDetermined:
                     locationManager.requestWhenInUseAuthorization()
                 }
             } else {
-//                  show error
+                AlertService.shared().showError(with: "Please, turn on location and try again!")
             }
         }
     }
@@ -100,7 +100,7 @@ final class LocationService: NSObject {
             
             NetworkService.shared().getTiming(for: location.coordinate) { (result) in
                 result
-//                      .withError()
+                    .withError(AlertService.shared().showError(_:))
                     .withValue({ (info) in
                         LocationService.shared().currentSunInfo = info
                     })
@@ -122,6 +122,6 @@ extension LocationService: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-//            show error
+        AlertService.shared().showError(error)
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2F035E802246C45E00931273 /* SunInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F035E7F2246C45E00931273 /* SunInfo.swift */; };
 		2F035E8B22479B4800931273 /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F035E8A22479B4800931273 /* NSNotificationName.swift */; };
+		2F035E8D224835B100931273 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F035E8C224835B100931273 /* AlertService.swift */; };
 		2F2B50802246B1530047DD54 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B507F2246B1530047DD54 /* NetworkService.swift */; };
 		2F2B50822246B1980047DD54 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B50812246B1980047DD54 /* LocationService.swift */; };
 		2FD5366D2245778B00D11640 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD5366C2245778B00D11640 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		2F035E7F2246C45E00931273 /* SunInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunInfo.swift; sourceTree = "<group>"; };
 		2F035E8A22479B4800931273 /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
+		2F035E8C224835B100931273 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		2F2B507F2246B1530047DD54 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		2F2B50812246B1980047DD54 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		2FD536692245778B00D11640 /* sun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sun.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +78,7 @@
 			children = (
 				2F2B50812246B1980047DD54 /* LocationService.swift */,
 				2F2B507F2246B1530047DD54 /* NetworkService.swift */,
+				2F035E8C224835B100931273 /* AlertService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				2F035E8B22479B4800931273 /* NSNotificationName.swift in Sources */,
 				2FD5366F2245778B00D11640 /* ViewController.swift in Sources */,
 				2FD5366D2245778B00D11640 /* AppDelegate.swift in Sources */,
+				2F035E8D224835B100931273 /* AlertService.swift in Sources */,
 				2F035E802246C45E00931273 /* SunInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
