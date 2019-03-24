@@ -22,6 +22,8 @@ final class LocationService: NSObject {
     var currentTimeZone: TimeZone?
     var currentLocation: CLLocation?
     
+    var preferredLocation: CLLocation?
+    
     var currentLocationName: String? {
         didSet {
             NotificationCenter.default.post(name: NSNotification.Name.LocationNameIsUpdated, object: nil)
@@ -51,26 +53,36 @@ final class LocationService: NSObject {
     }
     
     func refreshLocation() {
-        if CLLocationManager.locationServicesEnabled() {
-            switch CLLocationManager.authorizationStatus() {
-            case .authorizedAlways, .authorizedWhenInUse:
-                locationManager.requestLocation()
-            case .restricted, .denied:
-//                show error
-                break
-            case .notDetermined:
-                locationManager.requestWhenInUseAuthorization()
+        if let location = preferredLocation {
+            NetworkService.shared().getTiming(for: location.coordinate) { (result) in
+                result
+//                      .withError()
+                    .withValue({ (info) in
+                        LocationService.shared().currentSunInfo = info
+                    })
             }
         } else {
-//                show error
+            if CLLocationManager.locationServicesEnabled() {
+                switch CLLocationManager.authorizationStatus() {
+                case .authorizedAlways, .authorizedWhenInUse:
+                    locationManager.requestLocation()
+                case .restricted, .denied:
+//                    show error
+                    break
+                case .notDetermined:
+                    locationManager.requestWhenInUseAuthorization()
+                }
+            } else {
+//                  show error
+            }
         }
     }
     
-    private func getCurrentLocationName() {
-        guard let currentLocation = LocationService.shared().currentLocation else { return }
+    private func getCurrentLocationName(for location: CLLocation? = LocationService.shared().currentLocation) {
+        guard let location = location else { return }
         
         let geoCoder = CLGeocoder()
-        geoCoder.reverseGeocodeLocation(currentLocation, completionHandler: { placemarks, error -> Void in
+        geoCoder.reverseGeocodeLocation(location, completionHandler: { placemarks, error -> Void in
             guard let placeMark = placemarks?.first else { return }
             
             var place = ""
@@ -85,6 +97,14 @@ final class LocationService: NSObject {
             }
             
             LocationService.shared().currentLocationName = place
+            
+            NetworkService.shared().getTiming(for: location.coordinate) { (result) in
+                result
+//                      .withError()
+                    .withValue({ (info) in
+                        LocationService.shared().currentSunInfo = info
+                    })
+            }
         })
     }
 }
@@ -94,13 +114,6 @@ extension LocationService: CLLocationManagerDelegate {
         if let location = locations.first {
             currentLocation = location
             getCurrentLocationName()
-            NetworkService.shared().getTiming(for: location.coordinate) { (result) in
-                result
-//                .withError()
-                    .withValue({ (info) in
-                        LocationService.shared().currentSunInfo = info
-                    })
-            }
         }
     }
     

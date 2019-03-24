@@ -13,8 +13,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationView" customModule="sun" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="tvN-Lr-ADx" id="59v-dJ-kqn"/>
+                <outlet property="autocompleteTableView" destination="Rf0-Y4-Qwz" id="FuW-jd-BXd"/>
+                <outlet property="editButton" destination="bcn-Vt-GIP" id="EM3-xN-OET"/>
                 <outlet property="locationTextField" destination="aIW-wb-PTU" id="qVy-ei-VkV"/>
                 <outlet property="locationView" destination="dL5-ae-UNn" id="tVZ-AP-VgV"/>
+                <outlet property="titleLabel" destination="r75-tb-StA" id="yqR-tI-BdK"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -27,7 +30,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Lviv" placeholder="Type here..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aIW-wb-PTU">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type here..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aIW-wb-PTU">
                     <rect key="frame" x="16" y="83" width="343" height="30"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
@@ -62,15 +65,29 @@
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="tvN-Lr-ADx">
                     <rect key="frame" x="70" y="12" width="20" height="20"/>
                 </activityIndicatorView>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="64" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rf0-Y4-Qwz">
+                    <rect key="frame" x="0.0" y="140" width="375" height="0.0"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="separatorColor" red="0.94117647059999998" green="0.59215686270000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="BDt-H8-vm5"/>
+                        <outlet property="delegate" destination="-1" id="Ulp-lQ-azz"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="0.94117647059999998" green="0.59215686270000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="tvN-Lr-ADx" firstAttribute="leading" secondItem="WJo-Xf-baj" secondAttribute="trailing" id="1md-Al-t7j"/>
+                <constraint firstItem="Rf0-Y4-Qwz" firstAttribute="top" secondItem="5J6-a6-Byh" secondAttribute="top" constant="140" id="5sA-ME-N73"/>
                 <constraint firstItem="aIW-wb-PTU" firstAttribute="top" secondItem="r75-tb-StA" secondAttribute="bottom" constant="15" id="8dS-kI-T5I"/>
                 <constraint firstItem="tvN-Lr-ADx" firstAttribute="centerY" secondItem="WJo-Xf-baj" secondAttribute="centerY" id="90w-DM-gNt"/>
                 <constraint firstItem="aIW-wb-PTU" firstAttribute="centerX" secondItem="r75-tb-StA" secondAttribute="centerX" id="E1V-4P-Yrb"/>
+                <constraint firstItem="Rf0-Y4-Qwz" firstAttribute="leading" secondItem="5J6-a6-Byh" secondAttribute="leading" id="Haw-i8-wkq"/>
                 <constraint firstItem="5J6-a6-Byh" firstAttribute="trailing" secondItem="aIW-wb-PTU" secondAttribute="trailing" constant="16" id="LzO-PU-ZiM"/>
                 <constraint firstItem="bcn-Vt-GIP" firstAttribute="top" secondItem="dL5-ae-UNn" secondAttribute="top" id="Xnr-wh-Xzl"/>
+                <constraint firstItem="5J6-a6-Byh" firstAttribute="trailing" secondItem="Rf0-Y4-Qwz" secondAttribute="trailing" id="aXW-cm-DuX"/>
+                <constraint firstAttribute="bottom" secondItem="Rf0-Y4-Qwz" secondAttribute="bottom" id="fGz-Ty-bGG"/>
                 <constraint firstItem="r75-tb-StA" firstAttribute="top" secondItem="dL5-ae-UNn" secondAttribute="top" constant="44" id="h8h-la-AsJ"/>
                 <constraint firstItem="WJo-Xf-baj" firstAttribute="top" secondItem="dL5-ae-UNn" secondAttribute="top" id="jNs-4Z-GkP"/>
                 <constraint firstItem="5J6-a6-Byh" firstAttribute="trailing" secondItem="bcn-Vt-GIP" secondAttribute="trailing" id="mzk-sI-Bod"/>
