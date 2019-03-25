@@ -23,14 +23,16 @@ final class SunInfo {
     private func UTCToLocal(dateString: String?) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm:ss a"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         
-        let date = dateFormatter.date(from: dateString ?? "")
+        var date = dateFormatter.date(from: dateString ?? "")
         if let timeZone = LocationService.shared().currentTimeZone {
             dateFormatter.timeZone = timeZone
         } else {
             dateFormatter.timeZone = TimeZone.current
         }
+        date?.addTimeInterval(dateFormatter.timeZone.daylightSavingTimeOffset())
         dateFormatter.dateFormat = "HH:mm"
         
         return dateFormatter.string(from: date ?? Date())
